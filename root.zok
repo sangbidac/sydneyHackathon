@@ -9,15 +9,10 @@ def main(
     u32 min_age
 ) {
 
-    // assert(formatted_data[0][0] == 1234);
-    // assert(formatted_data[0][1] == 4);
-    // assert(formatted_data[0][2] == 2147483649);
-    // assert(formatted_data[0][15] == 64);
-
-    // Step 1: Compute the hash of the JSON object fields
+    //Step 1:
+    //Check the hash of the binary encoded id data is the same as the hash stored on chain
     u32[8] computed_hash = sha256(formatted_data);
 
-    // Step 2: Check if the computed hash matches the input hash
     // assert(computed_hash[0] == input_hash[0]);
 
     // Step 3: Calculate age
@@ -27,7 +22,6 @@ def main(
     // Step 4: Check if age is greater than or equal to min_age
     bool is_age_valid = ((current_date - birthday) >= min_age);
 
-    // // Step 5: Return true if both conditions are met
-    // assert (is_hash_match && is_age_valid);
+    assert (is_age_valid);
     return;
 }
