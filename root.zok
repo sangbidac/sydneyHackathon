@@ -1,0 +1,33 @@
+// Import the hash library to hash the JSON fields
+import "hashes/sha256/sha256" as sha256;
+
+// Main function
+def main(
+    private u32[1][16] formatted_data,
+    u32[8] input_hash
+    // u32 current_date,
+    // field min_age
+) {
+
+    // assert(formatted_data[0][0] == 1234);
+    // assert(formatted_data[0][1] == 4);
+    // assert(formatted_data[0][2] == 2147483649);
+    // assert(formatted_data[0][15] == 64);
+
+    // Step 1: Compute the hash of the JSON object fields
+    u32[8] computed_hash = sha256(formatted_data);
+
+    // Step 2: Check if the computed hash matches the input hash
+    log("{}", computed_hash);
+    // assert(computed_hash[0] == input_hash[0]);
+
+    // // Step 3: Calculate age
+    // field age = current_date - dob;
+
+    // // Step 4: Check if age is greater than or equal to min_age
+    // bool is_age_valid = (age >= min_age);
+
+    // // Step 5: Return true if both conditions are met
+    // assert (is_hash_match && is_age_valid);
+    return;
+}
